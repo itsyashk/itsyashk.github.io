@@ -23,20 +23,19 @@ export default function Hero() {
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 className="relative z-10 max-w-4xl mx-auto"
             >
-                <div className="inline-flex items-center rounded-full border border-gray-800 bg-gray-950/50 px-3 py-1 text-sm text-gray-400 mb-8 backdrop-blur-sm">
+                {/* <div className="inline-flex items-center rounded-full border border-gray-800 bg-gray-950/50 px-3 py-1 text-sm text-gray-400 mb-8 backdrop-blur-sm">
                     <span className="flex h-2 w-2 rounded-full bg-blue-500 mr-2"></span>
-                    Available for opportunities
-                </div>
+                    Currently 
+                </div> */}
 
                 <h1 className="text-5xl md:text-8xl font-bold tracking-tight mb-8">
                     <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
-                        Build. Perceive. Control.
+                        Yash Kakade
                     </span>
                 </h1>
 
                 <p className="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-                    I build real robotics systems end-to-end. <br className="hidden md:block" />
-                    From <span className="text-gray-100">camera calibration</span> to <span className="text-gray-100">humanoid control</span>.
+                    Interested in all things Robotics, Automation, Reinforcement Learning, Perception, Space
                 </p>
 
                 <div className="flex flex-wrap justify-center gap-4">

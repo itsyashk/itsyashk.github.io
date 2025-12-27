@@ -6,14 +6,14 @@ import { useState } from "react";
 import { ArrowUpRight, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const allCategories = Array.from(new Set(projects.map(p => p.category)));
+const allCategories = Array.from(new Set(projects.flatMap(p => p.categories)));
 
 export default function ProjectsPage() {
     const [filter, setFilter] = useState("All");
     const [search, setSearch] = useState("");
 
     const filteredProjects = projects.filter(project => {
-        const matchesFilter = filter === "All" || project.category === filter;
+        const matchesFilter = filter === "All" || project.categories.includes(filter);
         const matchesSearch = project.title.toLowerCase().includes(search.toLowerCase()) ||
             project.description.toLowerCase().includes(search.toLowerCase());
         return matchesFilter && matchesSearch;
@@ -87,9 +87,13 @@ export default function ProjectsPage() {
                                         <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
                                             {project.title}
                                         </h3>
-                                        <span className="px-2 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.1] text-xs text-gray-400 font-mono">
-                                            {project.category}
-                                        </span>
+                                        <div className="flex gap-2">
+                                            {project.categories.map(cat => (
+                                                <span key={cat} className="px-2 py-0.5 rounded-full bg-white/[0.05] border border-white/[0.1] text-xs text-gray-400 font-mono">
+                                                    {cat}
+                                                </span>
+                                            ))}
+                                        </div>
                                     </div>
                                     <p className="text-gray-400 text-sm max-w-3xl">
                                         {project.summary}

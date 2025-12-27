@@ -34,7 +34,7 @@ export const projects = [
     {
         slug: "camera-only-mocap",
         title: "Camera-Only Motion Capture System",
-        category: "Perception",
+        categories: ["Perception", "Algorithms"],
         tags: ["Calibration", "Tracking", "Computer Vision"],
         stack: ["Python", "OpenCV", "Optimization"],
         date: "2024",
@@ -46,7 +46,7 @@ export const projects = [
     {
         slug: "autonomous-lawnmower",
         title: "Fully Autonomous Low-Cost Lawnmower",
-        category: "Robotics",
+        categories: ["Robotics", "Algorithms"],
         tags: ["SLAM", "Navigation", "Hardware"],
         stack: ["ROS 2", "2D SLAM", "OpenCV", "C++"],
         date: "2023",
@@ -57,7 +57,7 @@ export const projects = [
     {
         slug: "digital-twins-usaf",
         title: "USAF Digital Manufacturing Robotics",
-        category: "Systems",
+        categories: ["Algorithms", "Perception"],
         tags: ["Digital Twin", "Simulation", "Deployment"],
         stack: ["OptiTrack", "ROS 2", "Docker", "Python"],
         date: "2024",
@@ -68,7 +68,7 @@ export const projects = [
     {
         slug: "humanoid-tennis",
         title: "Humanoid Tennis Manipulation",
-        category: "Robotics",
+        categories: ["Algorithms"],
         tags: ["Humanoid", "Manipulation", "Control", "IK"],
         stack: ["ROS 2", "RViz", "C++", "Python"],
         date: "2025",
@@ -79,7 +79,7 @@ export const projects = [
     {
         slug: "dual-robot-slam",
         title: "Collaborative Dual-Robot SLAM",
-        category: "Robotics",
+        categories: ["Algorithms"],
         tags: ["Multi-Robot", "SLAM", "Navigation"],
         stack: ["ROS 2", "Gazebo", "Nav2"],
         date: "2024",

@@ -3,36 +3,39 @@ import { experience } from "@/lib/data";
 
 export default function ExperiencePage() {
     return (
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <h1 className="text-4xl font-bold mb-12">Experience</h1>
+        <div className="min-h-screen bg-black text-white pt-24 pb-20 selection:bg-white/20">
+            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 className="text-4xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
+                    Experience
+                </h1>
 
-            <div className="relative border-l border-[hsl(var(--muted))] ml-3 md:ml-6 space-y-12 pb-12">
-                {experience.map((job, index) => (
-                    <div key={index} className="relative pl-8 md:pl-12 group">
-                        {/* Dot */}
-                        <div className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-[hsl(var(--primary))] ring-4 ring-[hsl(var(--background))]" />
+                <div className="relative border-l border-white/[0.1] ml-3 md:ml-6 space-y-16 pb-12">
+                    {experience.map((job, index) => (
+                        <div key={index} className="relative pl-8 md:pl-12 group">
+                            {/* Dot */}
+                            <div className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-neutral-800 border border-white/[0.2] group-hover:bg-white group-hover:border-white transition-colors" />
 
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                            <div>
-                                <h3 className="text-2xl font-bold group-hover:text-[hsl(var(--primary))] transition-colors">
+                            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
+                                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
                                     {job.company}
                                 </h3>
-                                <p className="text-lg font-medium text-[hsl(var(--muted-foreground))]">
-                                    {job.role}
-                                </p>
+                                <span className="text-sm font-mono text-gray-500 mt-1 sm:mt-0">
+                                    {job.date}
+                                </span>
                             </div>
-                            <span className="text-sm font-mono text-[hsl(var(--muted-foreground))] mt-2 sm:mt-0 bg-[hsl(var(--secondary))] px-3 py-1 rounded-full w-fit">
-                                {job.date}
-                            </span>
-                        </div>
 
-                        <ul className="list-disc ml-5 space-y-2 text-[hsl(var(--muted-foreground))] marker:text-[hsl(var(--muted-foreground))]">
-                            {job.description.map((item, i) => (
-                                <li key={i}>{item}</li>
-                            ))}
-                        </ul>
-                    </div>
-                ))}
+                            <p className="text-lg font-medium text-gray-300 mb-4">
+                                {job.role}
+                            </p>
+
+                            <ul className="list-disc ml-4 space-y-2 text-gray-400 marker:text-gray-600">
+                                {job.description.map((item, i) => (
+                                    <li key={i} className="leading-relaxed">{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );

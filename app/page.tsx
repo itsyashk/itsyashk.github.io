@@ -29,16 +29,18 @@ export default function Home() {
                         <h3 className="text-xl font-bold text-white mb-2">Relativity Space</h3>
                         <p className="text-gray-400 text-sm mb-4">Robotics Software Engineering Intern</p>
                         <div className="flex gap-2">
-                            <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">ROS 2</span>
-                            <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Hardware</span>
+                            <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Perception</span>
+                            <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Motion Capture</span>
+                            <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Structure from Motion</span>
                         </div>
                     </div>
                     <div className="col-span-1 md:col-span-2 p-6 rounded-2xl border border-white/[0.1] bg-neutral-950 hover:bg-neutral-900 transition-colors">
                         <h3 className="text-xl font-bold text-white mb-2">Caltech</h3>
                         <p className="text-gray-400 text-sm mb-4">Undergraduate Researcher</p>
                         <div className="flex gap-2">
-                            <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Perception</span>
                             <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Control</span>
+                            <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Reinforcement Learning</span>
+                            <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Humanoid Locomotion</span>
                         </div>
                     </div>
                     <div className="col-span-1 md:col-span-1 p-6 rounded-2xl border border-white/[0.1] bg-neutral-950 flex flex-col justify-center items-center text-center">
