@@ -7,17 +7,27 @@ export default function PageViewCounter() {
     const didRun = useRef(false);
 
     useEffect(() => {
-        // avoids double increment in React strict mode during dev
         if (didRun.current) return;
         didRun.current = true;
 
-        fetch("https://api.counterapi.dev/v1/itsyashk-github-io/home-page-views/up", {
-            cache: "no-store",
-        })
-            .then((res) => res.json())
-            .then((data) => setCount(typeof data?.value === "number" ? data.value : null))
+        // Direct V1 API call - No NPM packages required
+        // Slug constructed from dashboard info: yash-kakades-workspace / first-counter-2296
+        fetch("https://api.counterapi.dev/v1/yash-kakades-workspace/first-counter-2296/up")
+            .then((res) => {
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+                return res.json();
+            })
+            .then((data) => {
+                if (typeof data?.count === "number") {
+                    setCount(data.count);
+                } else if (typeof data?.value === "number") {
+                    setCount(data.value);
+                } else {
+                    console.error("Unexpected response format:", data);
+                }
+            })
             .catch((err) => {
-                console.error("page view counter error:", err);
+                console.error("counterapi error:", err);
                 setCount(null);
             });
     }, []);
