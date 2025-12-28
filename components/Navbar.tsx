@@ -11,7 +11,7 @@ const navItems = [
     { name: 'About', path: '/about' },
     { name: 'Projects', path: '/projects' },
     { name: 'Experience', path: '/experience' },
-    { name: 'Skills', path: '/skills' },
+    // { name: 'Skills', path: '/skills' },
     //   { name: 'Hobbies', path: '/hobbies' },
     { name: 'Resume', path: '/resume' },
 ];
@@ -26,7 +26,7 @@ export default function Navbar() {
                 <div className="flex justify-between h-14 items-center">
                     <div className="flex-shrink-0 flex items-center">
                         <Link href="/" className="font-bold text-xl font-mono tracking-tighter text-white">
-                            λ
+                            λ itsyashk
                         </Link>
                     </div>
 

@@ -17,44 +17,67 @@ export default function Home() {
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="mb-10 text-center">
                     <h2 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
-                        Engineering Excellence
+                        Current Focus
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
-                        Proven track record in robotics, software, and systems.
+                        Pushing the boundaries of robotics in research and industry.
                     </p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div className="col-span-1 md:col-span-2 p-6 rounded-2xl border border-white/[0.1] bg-neutral-950 hover:bg-neutral-900 transition-colors">
-                        <h3 className="text-xl font-bold text-white mb-2">Relativity Space</h3>
-                        <p className="text-gray-400 text-sm mb-4">Robotics Software Engineering Intern</p>
-                        <div className="flex gap-2">
+                        <div className="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 className="text-xl font-bold text-white mb-1">Relativity Space</h3>
+                                <p className="text-gray-400 text-sm">Robotics Software Engineering Intern</p>
+                            </div>
+                            <div className="mt-1">
+                                <img src="/relativity-logo.png" alt="Relativity Space" className="h-14 w-auto object-contain" />
+                            </div>
+                        </div>
+                        <div className="flex gap-2 flex-wrap">
                             <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Perception</span>
                             <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Motion Capture</span>
                             <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Structure from Motion</span>
                         </div>
                     </div>
                     <div className="col-span-1 md:col-span-2 p-6 rounded-2xl border border-white/[0.1] bg-neutral-950 hover:bg-neutral-900 transition-colors">
-                        <h3 className="text-xl font-bold text-white mb-2">Caltech</h3>
-                        <p className="text-gray-400 text-sm mb-4">Undergraduate Researcher</p>
-                        <div className="flex gap-2">
+                        <div className="flex justify-between items-start mb-4">
+                            <div>
+                                <h3 className="text-xl font-bold text-white mb-1">Caltech</h3>
+                                <p className="text-gray-400 text-sm">Undergraduate Researcher</p>
+                            </div>
+                            <div>
+                                <img src="/amber-lab-logo.png" alt="AMBER Lab" className="h-8 w-auto object-contain" />
+                            </div>
+                        </div>
+                        <div className="flex gap-2 flex-wrap">
                             <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Control</span>
                             <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Reinforcement Learning</span>
                             <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-xs text-gray-300">Humanoid Locomotion</span>
                         </div>
                     </div>
                     <div className="col-span-1 md:col-span-1 p-6 rounded-2xl border border-white/[0.1] bg-neutral-950 flex flex-col justify-center items-center text-center">
-                        <span className="text-4xl font-bold text-white mb-1">2027</span>
+                        <span className="text-3xl font-bold text-white mb-1">June 2027</span>
                         <span className="text-gray-500 text-xs uppercase tracking-widest">Graduation</span>
                     </div>
                     <div className="col-span-1 md:col-span-3 p-6 rounded-2xl border border-white/[0.1] bg-neutral-950 flex flex-col justify-center">
                         <div className="flex items-center gap-4">
-                            <div className="h-10 w-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
-                                <Code size={20} />
+                            <div className="relative h-12 w-12 flex-shrink-0 rounded-full overflow-hidden border border-white/10 bg-white">
+                                <img
+                                    src="/caltech-logo.png"
+                                    alt="Caltech"
+                                    className="h-full w-full object-cover"
+                                />
                             </div>
-                            <div>
-                                <h4 className="font-bold text-white">Full Stack Robotics</h4>
-                                <p className="text-xs text-gray-400">From PCB design to Reinforcement Learning policies.</p>
+                            <div className="flex-1 min-w-0">
+                                <div className="flex items-center justify-between mb-1">
+                                    <h4 className="font-bold text-white text-sm md:text-base truncate">California Institute of Technology</h4>
+                                    <span className="text-xs font-mono text-gray-300 bg-gray-500/10 px-2 py-0.5 rounded-full border border-gray-500/20">GPA: 3.7/4.0</span>
+                                </div>
+                                <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 md:line-clamp-none">
+                                    B.S. Electrical Engineering (Intelligent Systems) and Business, Economics & Management (BEM)
+                                </p>
                             </div>
                         </div>
                     </div>
