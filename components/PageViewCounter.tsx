@@ -33,8 +33,8 @@ export default function PageViewCounter() {
     }, []);
 
     return (
-        <span className="text-xs text-[hsl(var(--muted-foreground))]">
-            page views · {count ?? "—"}
+        <span className="text-sm text-[hsl(var(--muted-foreground))]">
+            All Time Page Views: {count ?? "—"}
         </span>
     );
 }

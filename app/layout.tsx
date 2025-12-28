@@ -25,11 +25,10 @@ export default function RootLayout({
                     <main className="flex-grow pt-16">
                         {children}
                     </main>
-                    <footer className="py-8 text-center text-sm text-[hsl(var(--muted-foreground))] border-t border-[hsl(var(--muted))] mt-20 bg-black">
-                        <p>© {new Date().getFullYear()} Yash Kakade. Built with Next.js & Tailwind.</p>
-                        <div className="mt-2">
-                            <PageViewCounter />
-                        </div>
+                    <footer className="py-8 text-center text-sm text-[hsl(var(--muted-foreground))] border-t border-[hsl(var(--muted))] mt-20 bg-black flex justify-center items-center gap-2">
+                        <span>© {new Date().getFullYear()} Yash Kakade</span>
+                        <span>·</span>
+                        <PageViewCounter />
                     </footer>
                 </div>
             </body>
