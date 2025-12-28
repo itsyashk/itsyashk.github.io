@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
+import PageViewCounter from "@/components/PageViewCounter";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
@@ -26,6 +27,9 @@ export default function RootLayout({
                     </main>
                     <footer className="py-8 text-center text-sm text-[hsl(var(--muted-foreground))] border-t border-[hsl(var(--muted))] mt-20 bg-black">
                         <p>© {new Date().getFullYear()} Yash Kakade. Built with Next.js & Tailwind.</p>
+                        <div className="mt-2">
+                            <PageViewCounter />
+                        </div>
                     </footer>
                 </div>
             </body>
