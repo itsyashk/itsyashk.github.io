@@ -4,8 +4,8 @@ export const profile = {
     headline: "Robotics + Perception Engineer",
     subheading: "camera-only motion capture, humanoid manipulation, RL + simulation",
     about: {
-        short: "I build real robotics systems end-to-end, focusing on autonomy, perception, and control.",
-        long: "I am a Caltech undergraduate specializing in electrical engineering and intelligent systems. My passion lies in building physical systems that perceive and interact with the world reliably.",
+        short: "I love to automate things because I'm lazy. I'd rather spend 100 hours building a system to save 30 minutes of manual labor.",
+        long: "I'm a Caltech undergrad studying Electrical Engineering and Computer Science. My end goal is to automate my entire house so I never have to do chores again. This drives my research into humanoid robotics as I believe learning based control is the only way to get robots reliable enough to actually live with us.",
         focus: [
             "Perception and Calibration",
             "Control + Planning",
@@ -154,8 +154,8 @@ export const skills = {
 };
 
 export const hobbies = [
-    "Track & Field (Sprinting, Long Jump, Triple Jump)",
-    "Strength Training",
-    "Daily iPad Writing",
+    "NCAA Track & Field (Sprinting, Jumps)",
+    "Origami",
+    "Cars & Racing",
     "Making/Prototyping"
 ];
