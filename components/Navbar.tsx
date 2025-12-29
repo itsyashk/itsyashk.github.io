@@ -47,13 +47,13 @@ export default function Navbar() {
                                     {item.name}
                                 </Link>
                             ))}
-                            <a
-                                href="mailto:contact@yashkakade.com"
-                                className="text-gray-400 hover:text-white transition-colors"
-                                aria-label="Email"
+                            <Link
+                                href="/contact"
+                                className="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-200"
+                                aria-label="Contact"
                             >
-                                <Mail size={16} />
-                            </a>
+                                Contact
+                            </Link>
                         </div>
                     </div>
 

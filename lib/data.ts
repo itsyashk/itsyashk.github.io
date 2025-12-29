@@ -92,42 +92,58 @@ export const projects = [
 export const experience = [
     {
         company: "Relativity Space",
-        role: "Robotics Software Engineering Intern",
-        date: "Summer 2024", // Approximate
+        role: "Perception Researcher",
+        date: "June 2025 - Present",
+        location: "Long Beach, CA",
         description: [
-            "Worked on core robotics software infrastructure.",
-            "Contributed to real-time control systems.",
-            "Validated software on hardware testbeds."
+            "Built a motion-capture system from scratch, leveraging traditional Structure-from-Motion techniques.",
+            "Achieved ~10 micron global accuracy in rigid-body localization, outperforming OptiTrack’s published 150 micron benchmark by an order of magnitude (IR Camera based).",
+            "Developed a fully autonomous, self-calibrating pipeline using a custom calibration stand (no human in the loop) for faster and more robust initialization, with self-healing extrinsics based on epipolar geometry and probabilistic reprojection-error estimation."
         ]
     },
     {
-        company: "USAF",
-        role: "Digital Manufacturing Robotics Intern",
-        date: "2024",
+        company: "Caltech (AMBER Lab)",
+        role: "Robotics Researcher",
+        date: "November 2025 - Present",
+        location: "Pasadena, CA",
         description: [
-            "Developed digital twins using OptiTrack + ROS 2.",
-            "Implemented Docker-based deployment for manufacturing cells.",
-            "Utilized SAM-based object identification."
+            "Conducted reinforcement learning research for humanoid locomotion in Isaac Lab, developing LIP-inspired policies for velocity tracking and foot-contact regularization.",
+            "Designed reward constructions emphasizing phase-consistent gait generation, center-of-mass stability, and energy-efficient motion under disturbances."
         ]
     },
     {
-        company: "Caltech",
-        role: "Student Researcher",
-        date: "2023 - Present",
+        company: ".406 Ventures",
+        role: "Fellow",
+        date: "May 2025 - Present",
+        location: "Boston, MA",
         description: [
-            "Research in autonomous systems and perception.",
-            "Developing camera-only calibration methods."
+            "Selected as 1 of 15 Student Founders Nationwide Composing Class XVII.",
+            "Builder-first venture fellowship."
         ]
     },
     {
-        company: "Various",
-        role: "Additive Manufacturing Engineer",
-        date: "Prior",
+        company: "Air Force Research Laboratory",
+        role: "Computer Vision Researcher",
+        date: "June 2024 - September 2024",
+        location: "Dayton, OH",
         description: [
-            "Experience with 3D printing and CAD design.",
-            "Fusion 360 and SolidWorks proficiency."
+            "Automated digital twins manufacturing using OptiTrack motion capture and 3D scanning for robo-simulations.",
+            "Integrated ROS2 into the digital twin pipeline and developed a custom Dockerfile for optimized deployment and consistent environments using Kernel-Based Virtual Machines.",
+            "Created a 3D similarity score program via Iterative Closest Point and Hausdorff distance to validate YCB dataset.",
+            "Fine-tuned Meta SAM2 with PyTorch and YOLOv8 to create custom weights, enabling Boston Dynamics Spot to identify lab-specific objects with 92.8% accuracy."
         ]
-    }
+    },
+    {
+        company: "Caltech (Wierman Group)",
+        role: "Machine Learning Researcher",
+        date: "July 2023 - September 2023",
+        location: "Pasadena, CA",
+        description: [
+            "Evaluated the impact of adversarial noise on CNN-based machine perception for autonomous driving, identifying a 40% accuracy reduction in critical image regions using Python and TensorFlow.",
+            "Developed a CNN with 52,673 trainable parameters across four layers (convolution, max pooling, flatten, and dense) to assess noise effects using a dataset of 2,000 images.",
+            "Enhanced the robustness of machine perception by retraining the CNN on noise-affected data, achieving a 20% improvement in accuracy for vehicle position identification under adversarial conditions."
+        ]
+    },
 ];
 
 export const skills = {

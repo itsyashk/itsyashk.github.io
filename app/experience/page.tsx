@@ -1,36 +1,53 @@
+'use client';
 
 import { experience } from "@/lib/data";
+import { Calendar, MapPin, Briefcase } from "lucide-react";
 
 export default function ExperiencePage() {
     return (
         <div className="min-h-screen bg-black text-white pt-24 pb-20 selection:bg-white/20">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h1 className="text-4xl font-bold mb-12 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
                     Experience
                 </h1>
+                <p className="text-gray-400 mb-16 max-w-2xl">
+                    My professional journey in robotics and research.
+                </p>
 
-                <div className="relative border-l border-white/[0.1] ml-3 md:ml-6 space-y-16 pb-12">
+                <div className="space-y-12">
                     {experience.map((job, index) => (
-                        <div key={index} className="relative pl-8 md:pl-12 group">
-                            {/* Dot */}
-                            <div className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-neutral-800 border border-white/[0.2] group-hover:bg-white group-hover:border-white transition-colors" />
+                        <div key={index} className="group relative border border-white/[0.1] bg-neutral-950/50 rounded-2xl p-6 md:p-8 hover:bg-neutral-900/50 transition-all duration-300">
+                            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500/50 to-purple-500/50 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                            <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-2">
-                                <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                                    {job.company}
-                                </h3>
-                                <span className="text-sm font-mono text-gray-500 mt-1 sm:mt-0">
-                                    {job.date}
-                                </span>
+                            <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
+                                <div>
+                                    <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                                        {job.company}
+                                    </h3>
+                                    <div className="flex items-center text-blue-300/80 font-medium mt-1">
+                                        <Briefcase className="h-4 w-4 mr-2" />
+                                        {job.role}
+                                    </div>
+                                </div>
+                                <div className="flex flex-col items-start md:items-end gap-1 text-sm text-gray-500 font-mono">
+                                    <div className="flex items-center">
+                                        <Calendar className="h-4 w-4 mr-2" />
+                                        {job.date}
+                                    </div>
+                                    {/* Only render location if it exists, to avoid errors if type is inconsistent, though we just added it. */}
+                                    <div className="flex items-center">
+                                        <MapPin className="h-4 w-4 mr-2" />
+                                        {(job as any).location || "Remote"}
+                                    </div>
+                                </div>
                             </div>
 
-                            <p className="text-lg font-medium text-gray-300 mb-4">
-                                {job.role}
-                            </p>
-
-                            <ul className="list-disc ml-4 space-y-2 text-gray-400 marker:text-gray-600">
+                            <ul className="space-y-3 text-gray-400">
                                 {job.description.map((item, i) => (
-                                    <li key={i} className="leading-relaxed">{item}</li>
+                                    <li key={i} className="flex items-start leading-relaxed">
+                                        <span className="mr-3 mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-neutral-700 group-hover:bg-blue-400/50 transition-colors" />
+                                        <span>{item}</span>
+                                    </li>
                                 ))}
                             </ul>
                         </div>

@@ -20,7 +20,7 @@ export default function Home() {
                         Current Focus
                     </h2>
                     <p className="text-gray-400 max-w-2xl mx-auto">
-                        Pushing the boundaries of robotics in research and industry.
+                        Balancing engineering, research, and studies at Caltech.
                     </p>
                 </div>
 
@@ -73,7 +73,7 @@ export default function Home() {
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-center justify-between mb-1">
                                     <h4 className="font-bold text-white text-sm md:text-base truncate">California Institute of Technology</h4>
-                                    <span className="text-xs font-mono text-gray-300 bg-gray-500/10 px-2 py-0.5 rounded-full border border-gray-500/20">GPA: 3.7/4.0</span>
+                                    <span className="text-xs font-mono text-gray-300 bg-gray-500/10 px-2 py-0.5 rounded-full border border-gray-500/20">GPA: 3.8/4.0</span>
                                 </div>
                                 <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 md:line-clamp-none">
                                     B.S. Electrical Engineering (Intelligent Systems) and Business, Economics & Management (BEM)
