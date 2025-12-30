@@ -102,7 +102,19 @@ export default function Home() {
                             title={project.title}
                             description={project.summary}
                             header={
-                                <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-gradient-to-br from-neutral-900 to-neutral-800 border border-white/[0.05]" />
+                                ((project as any).image || ((project as any).images && (project as any).images[0])) ? (
+                                    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl overflow-hidden border border-white/[0.05]">
+                                        <img
+                                            src={(project as any).image || (project as any).images[0]}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover/bento:scale-105"
+                                        />
+                                    </div>
+                                ) : (
+                                    <div className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl bg-neutral-900 border border-white/[0.05] relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-grid-small-white/[0.2] [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+                                    </div>
+                                )
                             }
                             icon={<Globe className="h-4 w-4 text-neutral-500" />}
                             className={i === 0 || i === 3 ? "md:col-span-2" : ""}

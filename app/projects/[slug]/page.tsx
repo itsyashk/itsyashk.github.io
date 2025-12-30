@@ -11,22 +11,40 @@ export async function generateStaticParams() {
     }));
 }
 
+interface Project {
+    slug: string;
+    title: string;
+    categories: string[];
+    tags: string[];
+    stack: string[];
+    date: string;
+    summary: string;
+    description: string;
+    metrics?: string[];
+    github?: string;
+    image?: string;
+    images?: string[];
+}
+
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const project = projects.find((p) => p.slug === slug);
+    const project = projects.find((p) => p.slug === slug) as Project | undefined;
 
     if (!project) {
         notFound();
     }
 
+    // Combine single image and image array into one list for unified rendering
+    const displayImages = project.images || (project.image ? [project.image] : []);
+
     return (
         <article className="min-h-screen bg-black text-white pt-24 pb-20 selection:bg-white/20">
-            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <Link href="/projects" className="inline-flex items-center text-sm text-gray-500 hover:text-white mb-8 transition-colors group">
                     <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" /> Back to projects
                 </Link>
 
-                <header className="mb-16 border-b border-white/[0.1] pb-12">
+                <header className="mb-12 border-b border-white/[0.1] pb-12">
                     <div className="flex flex-wrap items-center gap-4 mb-6">
                         <div className="flex gap-2">
                             {project.categories.map(cat => (
@@ -58,16 +76,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     </div>
                 </header>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-                    <div className="md:col-span-2 space-y-16">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
+                    {/* Left Column: Text Content */}
+                    <div className="space-y-12 lg:col-span-2">
                         <section>
                             <h2 className="text-2xl font-bold mb-6 text-white">The Problem</h2>
                             <div className="prose prose-invert prose-lg max-w-none text-gray-400">
                                 <p>{project.description}</p>
-                                <p>
-                                    Building robust robotics systems requires handling uncertainty and real-world noise.
-                                    This project addresses specific challenges in {project.categories.join(" and ").toLowerCase()} by leveraging {project.stack[0]}.
-                                </p>
+
                             </div>
                         </section>
 
@@ -75,8 +91,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                             <h2 className="text-2xl font-bold mb-6 text-white">Approach</h2>
                             <div className="prose prose-invert prose-lg max-w-none text-gray-400">
                                 <p>
-                                    The core of the solution involves a custom pipeline built with {project.stack.join(" and ")}.
-                                    We prioritized modularity and performance, ensuring the system can run in real-time constraints.
+                                    The core of the solution involves a custom pipeline built with {project.stack.join(", ")}.
+                                    I prioritized modularity and performance, ensuring the system can run in real-time constraints.
                                 </p>
                             </div>
                         </section>
@@ -84,17 +100,34 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                         <section>
                             <h2 className="text-2xl font-bold mb-6 text-white">Results</h2>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                {project.metrics?.map((metric, i) => (
-                                    <div key={i} className="flex flex-col p-4 rounded-xl bg-neutral-900/50 border border-white/[0.1]">
-                                        <span className="text-3xl font-bold text-white mb-1">{metric.split(' ')[0]}</span>
-                                        <span className="text-sm text-gray-500">{metric.split(' ').slice(1).join(' ')}</span>
-                                    </div>
-                                ))}
+                                {project.metrics?.map((metric, i) => {
+                                    const [value, label] = metric.includes('|')
+                                        ? metric.split('|').map(s => s.trim())
+                                        : [metric.split(' ')[0], metric.split(' ').slice(1).join(' ')];
+
+                                    return (
+                                        <div key={i} className="flex flex-col p-4 rounded-xl bg-neutral-900/50 border border-white/[0.1]">
+                                            <span className="text-3xl font-bold text-white mb-1">{value}</span>
+                                            <span className="text-sm text-gray-500">{label}</span>
+                                        </div>
+                                    );
+                                })}
                             </div>
                         </section>
                     </div>
 
+                    {/* Right Column: Image & Details */}
                     <div className="space-y-8">
+                        {displayImages.map((img, idx) => (
+                            <div key={idx} className="rounded-xl overflow-hidden border border-white/[0.1] bg-neutral-900">
+                                <img
+                                    src={img}
+                                    alt={`${project.title} ${idx + 1}`}
+                                    className="w-full h-auto block"
+                                />
+                            </div>
+                        ))}
+
                         <div className="p-6 rounded-2xl bg-neutral-900/30 border border-white/[0.1]">
                             <h3 className="font-bold mb-4 text-white flex items-center">
                                 <Cpu className="h-4 w-4 mr-2 text-blue-400" />

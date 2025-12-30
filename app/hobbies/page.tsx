@@ -4,7 +4,7 @@ import { hobbies } from "@/lib/data";
 export default function HobbiesPage() {
     return (
         <div className="min-h-screen bg-black text-white pt-24 pb-20 selection:bg-white/20">
-            <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h1 className="text-4xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
                     Outside Engineering
                 </h1>

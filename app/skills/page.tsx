@@ -4,7 +4,7 @@ import { skills } from "@/lib/data";
 export default function SkillsPage() {
     return (
         <div className="min-h-screen bg-black text-white pt-24 pb-20 selection:bg-white/20">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="mb-12">
                     <h1 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
                         Skills & Toolkit
