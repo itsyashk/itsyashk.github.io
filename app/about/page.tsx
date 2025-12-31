@@ -17,6 +17,9 @@ export default function AboutPage() {
                         </p>
                         <p className="leading-relaxed">{profile.about.long}</p>
                         <p className="leading-relaxed">
+                            I grew up in Dayton, Ohio and got into robotics in elementary and middle school, continuing to work independently through high school. In the summer before starting my undergraduate studies at Caltech, I did controls research there. I spent my freshman summer working on computer vision and robotics at AFRL, followed by similar work at Relativity Space during my sophomore summer. I continue to do research at Relativity Space and have since started research with the AMBER Lab at Caltech.
+                        </p>
+                        <p className="leading-relaxed">
                             I believe that the most interesting problems lie at the intersection of hardware and algorithms.
                             Whether it's building a motion capture system with micron-level accuracy or training humanoids to walk over rough terrain,
                             I enjoy the challenge of making math work in the physical world.
