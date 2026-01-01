@@ -26,7 +26,7 @@ export default function RootLayout({
                         {children}
                     </main>
                     <footer className="py-8 text-center text-sm text-[hsl(var(--muted-foreground))] border-t border-[hsl(var(--muted))] mt-20 bg-black flex justify-center items-center gap-2">
-                        <span>© {new Date().getFullYear()} Yash Kakade</span>
+                        <span>© 2026 Yash Kakade</span>
                         <span>·</span>
                         <PageViewCounter />
                     </footer>
