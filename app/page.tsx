@@ -73,7 +73,7 @@ export default function Home() {
                             <div className="flex-1 min-w-0">
                                 <div className="flex items-center justify-between mb-1">
                                     <h4 className="font-bold text-white text-sm md:text-base truncate">California Institute of Technology</h4>
-                                    <span className="text-xs font-mono text-gray-300 bg-gray-500/10 px-2 py-0.5 rounded-full border border-gray-500/20">GPA: 3.8/4.0</span>
+                                    <span className="text-xs font-mono text-gray-300 bg-gray-500/10 px-2 py-0.5 rounded-full border border-gray-500/20">GPA: 3.7/4.0</span>
                                 </div>
                                 <p className="text-xs text-gray-400 leading-relaxed line-clamp-2 md:line-clamp-none">
                                     B.S. Electrical Engineering (Intelligent Systems) and Business, Economics & Management (BEM)
@@ -85,7 +85,7 @@ export default function Home() {
             </section>
 
             {/* Featured Projects Bento */}
-            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            {/* <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
                 <div className="flex justify-between items-end mb-10 border-b border-white/[0.1] pb-4">
                     <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-500">
                         Selected Projects
@@ -121,7 +121,7 @@ export default function Home() {
                         />
                     ))}
                 </BentoGrid>
-            </section>
+            </section> */}
         </div>
     );
 }
