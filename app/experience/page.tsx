@@ -17,7 +17,7 @@ export default function ExperiencePage() {
                 <div className="space-y-12">
                     {experience.map((job, index) => (
                         <div key={index} className="group relative border border-white/[0.1] bg-neutral-950/50 rounded-2xl p-6 md:p-8 hover:bg-neutral-900/50 transition-all duration-300">
-                            <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-500/50 to-purple-500/50 rounded-l-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+
 
                             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                                 <div>
