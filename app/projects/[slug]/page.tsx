@@ -20,6 +20,7 @@ interface Project {
     date: string;
     summary: string;
     description: string;
+    approach?: string;
     metrics?: string[];
     github?: string;
     image?: string;
@@ -90,10 +91,14 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                         <section>
                             <h2 className="text-2xl font-bold mb-6 text-white">Approach</h2>
                             <div className="prose prose-invert prose-lg max-w-none text-gray-400">
-                                <p>
-                                    The core of the solution involves a custom pipeline built with {project.stack.join(", ")}.
-                                    I prioritized modularity and performance, ensuring the system can run in real-time constraints.
-                                </p>
+                                {project.approach ? (
+                                    <p>{project.approach}</p>
+                                ) : (
+                                    <p>
+                                        The core of the solution involves a custom pipeline built with {project.stack.join(", ")}.
+                                        I prioritized modularity and performance, ensuring the system can run in real-time constraints.
+                                    </p>
+                                )}
                             </div>
                         </section>
 

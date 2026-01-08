@@ -91,6 +91,20 @@ export const projects = [
         github: "https://github.com/itsyashk/ros2-dual-robot-slam-explorer",
         metrics: ["Unified Multi-Robot Map", "Dual RRT Path Planning Algorithm"],
         images: ["/images/projects/dual-slam.png", "/images/projects/mars-robot.png"],
+    },
+    {
+        slug: "adversarial-noise-perception",
+        title: "Adversarial Noise Perception Analysis",
+        categories: ["Perception", "ML/AI"],
+        tags: ["Computer Vision", "Adversarial ML", "CNN", "TensorFlow"],
+        stack: ["Python", "TensorFlow", "Pandas", "Matplotlib"],
+        date: "2023",
+        summary: "Analyzing and mitigating the impact of adversarial noise on CNN-based autonomous driving perception.",
+        description: "We conducted research on the vulnerability of CNN-based perception systems to adversarial noise, specifically in the context of autonomous driving. Using Python and TensorFlow, we developed a custom CNN architecture with 52,673 parameters and evaluated its performance on a dataset of 2,000 images. Our analysis revealed a critical 40% reduction in accuracy when adversarial noise was introduced to road areas. To mitigate this, we retrained the model with noise-aware strategies, successfully improving vehicle position identification accuracy by 20% and demonstrating enhanced robustness for machine perception.",
+        approach: "The core of the solution involves a custom pipeline built with Python, TensorFlow, Pandas, Matplotlib. We prioritized modularity and performance, ensuring the system can run in real-time constraints.",
+        github: "https://github.com/jaydenzhaobautista/fsri-perception-based-control",
+        metrics: ["40% Vulnerability Identified", "20% Robustness Gain", "52k Parameter Custom CNN"],
+        image: "/images/projects/fsri-perception.png",
     }
 ];
 
