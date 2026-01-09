@@ -39,8 +39,9 @@ export const projects = [
         stack: ["Python", "OpenCV", "Optimization"],
         date: "2025",
         summary: "Self-healing calibration and rigid-body tracking system requiring only standard cameras.",
-        description: "I built this system entirely from scratch, deriving the solution from the mathematical basics of motion capture to address the challenges of handling uncertainty and real-world noise in robotics. The core of the solution involves a custom pipeline built with Python, OpenCV, and Optimization that prioritizes modularity and performance to ensure execution within real-time constraints. Key features include autonomous hands-free calibration, robust occlusion handling, and a self-healing capability that allows the system to automatically recover and recalibrate if a camera is bumped or moved.",
+        description: "I built this system entirely from scratch, utilizing Structure from Motion (SfM) theory and applying it at a fundamental level to address the challenges of handling uncertainty and real-world noise in robotics. The core of the solution involves a custom pipeline built with Python, OpenCV, and Optimization that prioritizes modularity and performance to ensure execution within real-time constraints. Key features include autonomous hands-free calibration, robust occlusion handling, and a self-healing capability that allows the system to automatically recover and recalibrate if a camera is bumped or moved.",
         metrics: ["10 micron level accuracy", "N Rigid Bodies"],
+        image: "/images/projects/mocap-system.png",
     },
     {
         slug: "autonomous-lawnmower",
