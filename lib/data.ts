@@ -93,8 +93,8 @@ export const projects = [
         images: ["/images/projects/dual-slam.png", "/images/projects/mars-robot.png"],
     },
     {
-        slug: "adversarial-noise-perception",
-        title: "Adversarial Noise Perception Analysis",
+        slug: "learning-robust-perception",
+        title: "Learning Robust Perception for Control",
         categories: ["Perception", "ML/AI"],
         tags: ["Computer Vision", "Adversarial ML", "CNN", "TensorFlow"],
         stack: ["Python", "TensorFlow", "Pandas", "Matplotlib"],
