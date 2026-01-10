@@ -53,7 +53,7 @@ export default function Home() {
                             />
                         </div>
                         <p className="text-xs text-neutral-400 mt-2 text-center font-mono">
-                            ykakade [at] caltech.edu
+                            ykakade [at] caltech [dot] edu
                         </p>
                     </div>
                 </section>
