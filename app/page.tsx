@@ -24,7 +24,7 @@ export default function Home() {
                                 Hey! I’m Yash, a third-year undergrad at <a href="https://www.caltech.edu/" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">Caltech</a> studying Electrical Engineering with a focus on Intelligent Systems. I’m advised by <a href="https://www.cms.caltech.edu/people/hassibi" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">Prof. Babak Hassibi</a>.
                             </p>
                             <p className="mb-4">
-                                Broadly, I’m interested in embodied intelligence at the intersection of hardware, perception, and learning-based control. My work spans robotics, computer vision, motion capture, and reinforcement learning, with a strong emphasis on real-world deployment. At Caltech, I work on humanoid locomotion using reinforcement learning in the <a href="http://www.bipedalrobotics.com/" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">AMBER Lab</a>. In parallel, I conduct perception and robotics research with <a href="https://www.relativityspace.com/" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">Relativity Space</a>, focusing on high-precision sensing, motion capture, and digital twin systems for aerospace applications.
+                                Broadly, I’m interested in embodied intelligence at the intersection of hardware, perception, and learning-based control. My work spans robotics, computer vision, motion capture, and reinforcement learning, with a strong emphasis on real-world deployment. At Caltech, I work on humanoid locomotion using reinforcement learning in the <a href="http://www.bipedalrobotics.com/" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">AMBER Lab</a>. In parallel, I conduct perception and robotics research with <a href="https://www.relativityspace.com/darkmatterlab" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">Relativity Space</a>, focusing on high-precision sensing, motion capture, and digital twin systems for aerospace applications.
                             </p>
                             <p>
                                 I’ve previously worked as a robotics and computer vision intern at AFRL developing ROS2-enabled digital twins and perception systems for autonomous robots, as well as a Robotics Software Engineering Intern at Relativity Space, and briefly conducted machine learning research in the Wierman Group at Caltech on adversarial robustness in CNN-based perception.
@@ -119,7 +119,7 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div className="col-span-1 md:col-span-2 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
+                    <a href="https://www.relativityspace.com/darkmatterlab" target="_blank" className="col-span-1 md:col-span-2 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors block">
                         <div className="flex justify-between items-start mb-4">
                             <div>
                                 <h3 className="text-xl font-bold text-black dark:text-white mb-1">Relativity Space</h3>
@@ -134,7 +134,7 @@ export default function Home() {
                             <span className="px-2 py-1 rounded-md bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 text-xs text-neutral-600 dark:text-neutral-300">Motion Capture</span>
                             <span className="px-2 py-1 rounded-md bg-white dark:bg-white/5 border border-neutral-200 dark:border-white/10 text-xs text-neutral-600 dark:text-neutral-300">Structure from Motion</span>
                         </div>
-                    </div>
+                    </a>
                     <div className="col-span-1 md:col-span-2 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">
                         <div className="flex justify-between items-start mb-4">
                             <div>

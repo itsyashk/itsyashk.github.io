@@ -22,7 +22,13 @@ export default function ExperiencePage() {
                             <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-6">
                                 <div>
                                     <h3 className="text-2xl font-bold text-white group-hover:text-blue-400 transition-colors">
-                                        {job.company}
+                                        {(job as any).website ? (
+                                            <a href={(job as any).website} target="_blank" rel="noopener noreferrer" className="hover:underline">
+                                                {job.company}
+                                            </a>
+                                        ) : (
+                                            job.company
+                                        )}
                                     </h3>
                                     <div className="flex items-center text-blue-300/80 font-medium mt-1">
                                         <Briefcase className="h-4 w-4 mr-2" />

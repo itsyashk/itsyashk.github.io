@@ -112,6 +112,7 @@ export const projects = [
 export const experience = [
     {
         company: "Relativity Space",
+        //website: "https://www.relativityspace.com/darkmatterlab",
         role: "Perception Researcher",
         date: "June 2025 - Present",
         location: "Long Beach, CA",
