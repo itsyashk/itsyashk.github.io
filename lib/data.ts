@@ -129,7 +129,8 @@ export const experience = [
         location: "Pasadena, CA",
         description: [
             "Conducted reinforcement learning research for humanoid locomotion in Isaac Lab, developing LIP-inspired policies for velocity tracking and foot-contact regularization.",
-            "Designed reward constructions emphasizing phase-consistent gait generation, center-of-mass stability, and energy-efficient motion under disturbances."
+            "Designed reward constructions emphasizing phase-consistent gait generation, center-of-mass stability, and energy-efficient motion under disturbances.",
+            "Implemented procedural maze terrain generation in Isaac Lab using DFS-based layout generation and Wave Function Collapse (WFC) for edge-consistent ramp, stair, and flat mesh assembly."
         ]
     },
     {
