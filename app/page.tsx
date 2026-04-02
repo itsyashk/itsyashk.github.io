@@ -62,7 +62,9 @@ export default function Home() {
                 <section>
                     <h2 className="text-2xl font-bold mb-8 border-b border-neutral-200 dark:border-neutral-800 pb-2">Selected Projects</h2>
                     <div className="space-y-12">
-                        {projects.map((project) => (
+                        {[...projects]
+                            .filter(p => !['dual-robot-slam', 'learning-robust-perception', 'redundant-arm-3d'].includes(p.slug))
+                            .sort((a, b) => parseInt(b.date) - parseInt(a.date)).map((project) => (
                             <div key={project.slug} className="flex flex-col md:flex-row gap-6 group">
                                 <div className="w-full md:w-48 flex-shrink-0 aspect-video md:aspect-[4/3] rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-800 relative bg-neutral-100 dark:bg-neutral-900 self-start">
                                     {(project.image || (project.images && project.images[0])) ? (
@@ -70,6 +72,7 @@ export default function Home() {
                                             src={project.image || (project.images && project.images[0])}
                                             alt={project.title}
                                             className="object-cover w-full h-full opacity-90 group-hover:opacity-100 transition-opacity"
+                                            style={{ objectPosition: 'center 20%' }}
                                         />
                                     ) : (
                                         <div className="flex items-center justify-center h-full text-neutral-400 text-xs">No Image</div>
