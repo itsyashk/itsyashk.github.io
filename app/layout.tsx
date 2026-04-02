@@ -29,6 +29,8 @@ export default function RootLayout({
                         <span>© 2026 Yash Kakade</span>
                         <span>·</span>
                         <PageViewCounter />
+                        <span>·</span>
+                        <span>Last updated March 2026</span>
                     </footer>
                 </div>
             </body>
