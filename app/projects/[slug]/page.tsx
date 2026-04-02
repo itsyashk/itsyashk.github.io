@@ -25,6 +25,7 @@ interface Project {
     github?: string;
     image?: string;
     images?: string[];
+    video?: string;
 }
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -121,8 +122,21 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                         </section>
                     </div>
 
-                    {/* Right Column: Image & Details */}
+                    {/* Right Column: Media & Details */}
                     <div className="space-y-8">
+                        {project.video && (
+                            <div className="rounded-xl overflow-hidden border border-white/[0.1] bg-neutral-900">
+                                <video
+                                    src={project.video}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-auto block"
+                                    style={{ maxHeight: '600px', objectFit: 'contain', margin: '0 auto' }}
+                                />
+                            </div>
+                        )}
                         {displayImages.map((img, idx) => (
                             <div key={idx} className="rounded-xl overflow-hidden border border-white/[0.1] bg-neutral-900">
                                 <img

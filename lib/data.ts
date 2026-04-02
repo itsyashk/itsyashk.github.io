@@ -85,7 +85,7 @@ export const projects = [
         title: "3D Null Space Explorer for Redundant Robot Arms",
         categories: ["Robotics", "Algorithms"],
         tags: ["Inverse Kinematics", "Null Space", "Jacobian", "3D Simulation", "Interactive"],
-        stack: ["JavaScript", "Three.js", "Linear Algebra", "Browser"],
+        stack: ["JavaScript", "Three.js"],
         date: "2026",
         summary: "Interactive browser-based 3D simulation exploring null space self-motion of a redundant robot arm with real-time IK, manipulability visualization, and adaptive damping.",
         description: "We built an interactive 3D simulation of a redundant robot arm that runs entirely in the browser. You can grab the end effector and drag it around, and the arm solves inverse kinematics in real time using damped least squares with adaptive regularization. The key feature is the null space slider, you can slide it and watch the arm completely reshape itself while the hand stays perfectly still, demonstrating the self-motion manifold concept from Murray, Li & Sastry. The simulation supports 4–10 revolute joints with alternating y/z axes for full 3D motion, a manipulability ellipsoid computed via eigendecomposition of JJᵀ, and an end-effector trail to confirm null space motion preserves the tip position. We handle singularity avoidance with adaptive damping (λ ramps up when manipulability drops below 0.01), and a drift-correction pass snaps the end effector back after each null space step to counteract floating-point accumulation.",
@@ -120,6 +120,19 @@ export const projects = [
         github: "https://github.com/jaydenzhaobautista/fsri-perception-based-control",
         metrics: ["40% Vulnerability Identified", "20% Robustness Gain", "52k Parameter Custom CNN"],
         image: "/images/projects/fsri-perception.png",
+    },
+    {
+        slug: "rubiks-cube-robot",
+        title: "Autonomous Rubik's Cube Solving Robot",
+        categories: ["Robotics", "Perception"],
+        tags: ["Computer Vision", "Manipulation", "State Machine", "Inverse Kinematics"],
+        stack: ["Python", "ROS 2", "OpenCV", "Fusion 360", "Kociemba"],
+        date: "2026",
+        summary: "A 6-DOF robot arm that autonomously scans, solves, and executes moves on a physical Rubik's cube using computer vision and a custom manipulation pipeline.",
+        description: "We built a system where a HEBI 6-DOF robot arm autonomously solves a physical Rubik's cube end-to-end. The robot first detects the cube on a table using ArUco-marker-aided contour detection, picks it up, and scans all six faces by holding the cube above a USB camera. Color classification uses HSV masking with dual-range red handling and secondary RGB disambiguation, plus consensus voting over multiple frames to reject noise. The scanned state is fed to a Kociemba optimal solver, and the brain node then orchestrates the full solve sequence: for each move, it computes the shortest reorientation primitive sequence (tip or spin via drop-and-pickup), seats the cube in a 3D-printed jig that constrains the bottom layers, and twists the top face by rotating the wrist. A 10 Hz callback-based state machine (INIT → SCAN → SOLVE → FINISH) coordinates the pipeline, with a RECOVERY state that re-scans on solver failure. The trajectory executor runs a 100 Hz servo loop with gravity compensation for smooth, accurate motions throughout.",
+        approach: "The system is decomposed into four ROS nodes: a brain state machine (10 Hz) for high-level sequencing, a trajectory executor (100 Hz) for interpolated joint-space motion with gravity compensation, a cube detector for ArUco+contour-based pose estimation with residual map correction, and a face/sticker detector using fixed-grid HSV classification with consensus voting. Cube orientation is tracked via a permutation table that updates after every reorientation primitive, allowing the solver to always know which logical face occupies each physical position. The drop-and-pickup reorientation strategy proved surprisingly robust, and the wrist-snap optimization on the first solve move saves a full manipulation cycle.",
+        metrics: ["6-DOF|HEBI Robot Arm", "Full Autonomy|Scan → Solve → Execute"],
+        video: "/images/projects/rubiks-cube-3x.mp4",
     }
 ];
 
