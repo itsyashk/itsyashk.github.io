@@ -134,6 +134,18 @@ export const projects = [
         metrics: ["6-DOF Robot Arm", "Full Autonomy|Scan → Solve → Execute"],
         image: "/images/projects/rubiks-preview.jpeg",
         video: "/images/projects/rubiks-cube-3x.mp4",
+    },
+    {
+        slug: "finbert-financial-analysis",
+        title: "FinBERT Financial Disclosure Analysis",
+        categories: ["ML/AI"],
+        tags: ["NLP", "FinBERT", "Financial Analysis", "SEC Filings"],
+        stack: ["Python", "FinBERT", "Pandas", "Matplotlib"],
+        date: "2026",
+        summary: "NLP-driven analysis of consistency between financial ratios and MD&A disclosures in aerospace & defense 10-K filings using FinBERT.",
+        description: "I wanted to see if what companies tell the public actually matches what their financial numbers show. I investigated whether aerospace and defense manufacturers maintain consistency between their quantitative financial ratios and the tone and themes of their Management's Discussion and Analysis (MD&A) sections in 10-K reports. I selected 10 firms: including Boeing, Lockheed Martin, RTX, General Dynamics, and Spirit AeroSystems covering fiscal years 2015–2024. I extracted financial statement data from each firm's 10-K filings using Python and calculated 18 financial ratios spanning profitability, liquidity, leverage, and efficiency. To analyze narrative alignment, I used FinBERT, a financial-domain language model trained on corporate disclosures, rather than standard BERT which misclassifies financial jargon like 'liability' or 'charge.' For each firm-year observation, I compared the financial ratio signal to MD&A tone using cosine similarity scoring, classifying alignment as 'echoed' when similarity scores exceeded ~0.55.",
+        approach: "Results showed stronger consistency for profitability and leverage ratios and weaker consistency for liquidity and efficiency ratios. The highest alignment came from leverage disclosures TransDigm's debt-to-equity ratio scored 0.7271, and Boeing's ROA during the 2020 pandemic scored 0.7113, meaning management's narrative closely mirrored the financial reality. Profitability metrics like net margin (0.5962) and gross margin (0.5492–0.6848) also showed strong alignment across firms. On the other end, efficiency ratios like receivables turnover for General Dynamics and Huntington Ingalls were not flagged as echoed at all management simply didn't discuss collection efficiency or working capital in their MD&A. For context, FinBERT cosine similarity scores in the 0.5–0.7 range represent meaningful thematic alignment between financial signals and narrative text; scores above 0.55 in my dataset reliably indicated that management explicitly addressed the underlying ratio, while scores below that threshold suggested the topic was either omitted or only indirectly referenced. All observed scores fell within expected ranges for financial disclosure analysis. Overall, the findings suggest that MD&A disclosures function as strategic narratives firms are transparent about high-visibility metrics like profitability and leverage, but rarely discuss working capital dynamics even when those ratios shift noticeably.",
+        metrics: ["10 Firms|2015–2024 Coverage", "18 Ratios|Per Firm-Year"],
     }
 ];
 
