@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import PageViewCounter from "@/components/PageViewCounter";
@@ -20,6 +21,18 @@ export default function RootLayout({
     return (
         <html lang="en" className="scroll-smooth dark">
             <body className={`${inter.variable} ${jetbrainsMono.variable} font-sans bg-black text-white`}>
+                {/* Google Analytics */}
+                <Script src="https://www.googletagmanager.com/gtag/js?id=G-P0CS2LXLTF" strategy="afterInteractive" />
+                <Script id="google-analytics" strategy="afterInteractive">
+                    {`
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('js', new Date());
+
+                        gtag('config', 'G-P0CS2LXLTF');
+                    `}
+                </Script>
+
                 <div className="flex flex-col min-h-screen">
                     <Navbar />
                     <main className="flex-grow pt-16">
