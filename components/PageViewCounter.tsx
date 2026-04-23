@@ -12,25 +12,20 @@ export default function PageViewCounter() {
 
         const token = process.env.NEXT_PUBLIC_COUNTER_API_KEY;
 
-        // 1. V2 API (Fire-and-forget for History/Analytics)
-        // We use the 'team' namespace as invoked in the dashboard.
-        // We don't await this or use its result because of CORS/Auth limitations on reading.
+        // Use the V2 API to increment and get the current count.
+        // The legacy V1 API is returning 503 errors and failing to fetch.
         fetch("https://api.counterapi.dev/v2/yash-kakades-team-2296/first-counter-2296/up")
-            .catch(e => console.warn("V2 Tracking silent fail:", e));
-
-        // 2. V1 API (Legacy - For Displaying Total Count)
-        // We use the original 'workspace' namespace that was working previously to show "107+".
-        fetch("https://api.counterapi.dev/v1/yash-kakades-workspace/first-counter-2296/up")
             .then((res) => {
-                if (!res.ok) throw new Error(`HTTP V1 error! status: ${res.status}`);
+                if (!res.ok) throw new Error(`HTTP V2 error! status: ${res.status}`);
                 return res.json();
             })
             .then((data) => {
-                if (typeof data?.count === "number") setCount(data.count);
-                else if (typeof data?.value === "number") setCount(data.value);
+                if (typeof data?.data?.up_count === "number") {
+                    setCount(data.data.up_count);
+                }
             })
             .catch((err) => {
-                console.error("CounterAPI V1 error:", err);
+                console.error("CounterAPI V2 error:", err);
                 setCount(null);
             });
     }, []);
