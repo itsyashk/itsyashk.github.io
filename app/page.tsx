@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { projects, profile } from "@/lib/data";
 import { Github, Linkedin, Mail } from "lucide-react";
+import Image from "next/image";
 
 export default function Home() {
     return (
@@ -16,18 +17,18 @@ export default function Home() {
                             {profile.name}
                         </h1>
                         <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-6 font-medium">
-                            Engineering Applied Science Junior at <a href="https://www.eas.caltech.edu/" target="_blank" className="text-black dark:text-white hover:underline transition-all">Caltech</a>
+                            Engineering Applied Science Junior at <a href="https://www.eas.caltech.edu/" target="_blank" rel="noopener noreferrer" className="text-black dark:text-white hover:underline transition-all">Caltech</a>
                         </p>
 
                         <div className="prose prose-neutral dark:prose-invert max-w-none mb-6 text-neutral-600 dark:text-neutral-400 leading-relaxed text-[1.05rem]">
                             <p className="mb-4">
-                                Hey! I’m Yash, a third-year undergrad at <a href="https://www.caltech.edu/" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">Caltech</a> studying Electrical Engineering with a focus on Intelligent Systems. I’m advised by <a href="https://www.cms.caltech.edu/people/hassibi" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">Prof. Babak Hassibi</a>.
+                                Hey! I’m Yash, a third-year undergrad at <a href="https://www.caltech.edu/" target="_blank" rel="noopener noreferrer" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">Caltech</a> studying Electrical Engineering with a focus on Intelligent Systems. I’m advised by <a href="https://www.cms.caltech.edu/people/hassibi" target="_blank" rel="noopener noreferrer" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">Prof. Babak Hassibi</a>.
                             </p>
                             <p className="mb-4">
-                                Broadly, I’m interested in embodied intelligence at the intersection of hardware, perception, and learning-based control. My work spans robotics, computer vision, motion capture, and reinforcement learning, with a strong emphasis on real-world deployment. At Caltech, I work on humanoid locomotion using reinforcement learning in the <a href="http://www.bipedalrobotics.com/" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">AMBER Lab</a>. In parallel, I conduct perception and robotics research with <a href="https://www.relativityspace.com/darkmatterlab" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">Relativity Space</a>, focusing on high-precision sensing, motion capture, and digital twin systems for aerospace applications.
+                                Broadly, I’m interested in embodied intelligence at the intersection of hardware, perception, and learning-based control. My work spans robotics, computer vision, motion capture, and reinforcement learning, with a strong emphasis on real-world deployment. At Caltech, I work on humanoid locomotion using reinforcement learning in the <a href="http://www.bipedalrobotics.com/" target="_blank" rel="noopener noreferrer" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">AMBER Lab</a>. In parallel, I conduct perception and robotics research with <a href="https://www.relativityspace.com/darkmatterlab" target="_blank" rel="noopener noreferrer" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">Relativity Space</a>, focusing on high-precision sensing, motion capture, and digital twin systems for aerospace applications.
                             </p>
                             <p>
-                                I’ve previously worked as a robotics and computer vision intern at <a href="https://www.afrl.af.mil/" target="_blank" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">AFRL</a> developing ROS2-enabled digital twins and perception systems for autonomous robots, as well as a Robotics Software Engineering Intern at Relativity Space, and briefly conducted machine learning research in the Wierman Group at Caltech on adversarial robustness in CNN-based perception.
+                                I’ve previously worked as a robotics and computer vision intern at <a href="https://www.afrl.af.mil/" target="_blank" rel="noopener noreferrer" className="underline decoration-neutral-300 hover:decoration-black dark:decoration-neutral-700 dark:hover:decoration-white transition-all">AFRL</a> developing ROS2-enabled digital twins and perception systems for autonomous robots, as well as a Robotics Software Engineering Intern at Relativity Space, and briefly conducted machine learning research in the Wierman Group at Caltech on adversarial robustness in CNN-based perception.
                             </p>
                         </div>
 
@@ -35,10 +36,10 @@ export default function Home() {
                             <a href={profile.socials.email} className="text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
                                 <Mail className="w-5 h-5" />
                             </a>
-                            <a href={profile.socials.github} target="_blank" className="text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
+                            <a href={profile.socials.github} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
                                 <Github className="w-5 h-5" />
                             </a>
-                            <a href={profile.socials.linkedin} target="_blank" className="text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
+                            <a href={profile.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-black dark:hover:text-white transition-colors">
                                 <Linkedin className="w-5 h-5" />
                             </a>
                         </div>
@@ -46,10 +47,12 @@ export default function Home() {
 
                     <div className="w-full md:w-72 flex-shrink-0">
                         <div className="relative aspect-square rounded-xl overflow-hidden bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
-                            <img
+                            <Image
                                 src="/images/about/headshot.jpg"
                                 alt="Yash Kakade"
-                                className="object-cover w-full h-full transition-all duration-500"
+                                fill
+                                className="object-cover transition-all duration-500"
+                                sizes="(max-width: 768px) 100vw, 288px"
                             />
                         </div>
                         <p className="text-xs text-neutral-400 mt-2 text-center font-mono">
@@ -68,11 +71,13 @@ export default function Home() {
                             <div key={project.slug} className="flex flex-col md:flex-row gap-6 group">
                                 <div className="w-full md:w-48 flex-shrink-0 aspect-video md:aspect-[4/3] rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-800 relative bg-neutral-100 dark:bg-neutral-900 self-start">
                                     {(project.image || (project.images && project.images[0])) ? (
-                                        <img
-                                            src={project.image || (project.images && project.images[0])}
+                                        <Image
+                                            src={project.image || (project.images && project.images[0]) || ''}
                                             alt={project.title}
-                                            className="object-cover w-full h-full opacity-90 group-hover:opacity-100 transition-opacity"
+                                            fill
+                                            className="object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                                             style={{ objectPosition: 'center 20%' }}
+                                            sizes="(max-width: 768px) 100vw, 192px"
                                         />
                                     ) : (
                                         <div className="flex items-center justify-center h-full text-neutral-400 text-xs">No Image</div>
@@ -97,7 +102,7 @@ export default function Home() {
                                             </span>
                                         ))}
                                         {project.github && (
-                                            <a href={project.github} target="_blank" className="text-xs border border-neutral-200 dark:border-neutral-800 px-2 py-1 rounded text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors uppercase font-medium">
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-xs border border-neutral-200 dark:border-neutral-800 px-2 py-1 rounded text-neutral-900 dark:text-neutral-100 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors uppercase font-medium">
                                                 Code
                                             </a>
                                         )}
@@ -122,14 +127,14 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <a href="https://www.relativityspace.com/darkmatterlab" target="_blank" className="col-span-1 md:col-span-2 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors block">
+                    <a href="https://www.relativityspace.com/darkmatterlab" target="_blank" rel="noopener noreferrer" className="col-span-1 md:col-span-2 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors block">
                         <div className="flex justify-between items-start mb-4">
                             <div>
                                 <h3 className="text-xl font-bold text-black dark:text-white mb-1">Relativity Space</h3>
                                 <p className="text-neutral-500 dark:text-neutral-400 text-sm">Robotics Software Engineering Intern</p>
                             </div>
                             <div className="mt-1">
-                                <img src="/relativity-logo.png" alt="Relativity Space" className="h-14 w-auto object-contain dark:invert" />
+                                <Image src="/relativity-logo.png" alt="Relativity Space" width={200} height={56} className="h-14 w-auto object-contain dark:invert" />
                             </div>
                         </div>
                         <div className="flex gap-2 flex-wrap">
@@ -145,7 +150,7 @@ export default function Home() {
                                 <p className="text-neutral-500 dark:text-neutral-400 text-sm">Undergraduate Researcher</p>
                             </div>
                             <div>
-                                <img src="/amber-lab-logo.png" alt="AMBER Lab" className="h-8 w-auto object-contain dark:invert" />
+                                <Image src="/amber-lab-logo.png" alt="AMBER Lab" width={150} height={32} className="h-8 w-auto object-contain dark:invert" />
                             </div>
                         </div>
                         <div className="flex gap-2 flex-wrap">
@@ -161,10 +166,12 @@ export default function Home() {
                     <div className="col-span-1 md:col-span-3 p-6 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-neutral-900 flex flex-col justify-center">
                         <div className="flex items-center gap-4">
                             <div className="relative h-12 w-12 flex-shrink-0 rounded-full overflow-hidden border border-neutral-200 dark:border-neutral-800 bg-white">
-                                <img
+                                <Image
                                     src="/caltech-logo.png"
                                     alt="Caltech"
-                                    className="h-full w-full object-cover"
+                                    fill
+                                    className="object-cover"
+                                    sizes="48px"
                                 />
                             </div>
                             <div className="flex-1 min-w-0">

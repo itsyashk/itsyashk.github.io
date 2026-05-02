@@ -9,8 +9,45 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains-mono" });
 
 export const metadata: Metadata = {
-    title: "Yash Kakade",
+    metadataBase: new URL("https://itsyashk.github.io"),
+    title: {
+        default: "Yash Kakade | Robotics + Perception",
+        template: "%s | Yash Kakade"
+    },
     description: "Caltech undergraduate specializing in robotics, perception, and control.",
+    openGraph: {
+        title: "Yash Kakade",
+        description: "Caltech undergraduate specializing in robotics, perception, and control.",
+        url: "https://itsyashk.github.io",
+        siteName: "Yash Kakade Portfolio",
+        images: [
+            {
+                url: "/images/about/headshot.jpg",
+                width: 800,
+                height: 800,
+                alt: "Yash Kakade Headshot",
+            },
+        ],
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Yash Kakade",
+        description: "Caltech undergraduate specializing in robotics, perception, and control.",
+        images: ["/images/about/headshot.jpg"],
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            "max-video-preview": -1,
+            "max-image-preview": "large",
+            "max-snippet": -1,
+        },
+    },
 };
 
 export default function RootLayout({

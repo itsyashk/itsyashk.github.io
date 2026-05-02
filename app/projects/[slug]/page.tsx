@@ -1,6 +1,7 @@
 
-import { projects } from "@/lib/data";
+import { projects, Project } from "@/lib/data";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, Github, Calendar, Tag, Cpu } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -11,22 +12,6 @@ export async function generateStaticParams() {
     }));
 }
 
-interface Project {
-    slug: string;
-    title: string;
-    categories: string[];
-    tags: string[];
-    stack: string[];
-    date: string;
-    summary: string;
-    description: string;
-    approach?: string;
-    metrics?: string[];
-    github?: string;
-    image?: string;
-    images?: string[];
-    video?: string;
-}
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
@@ -139,9 +124,11 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                         )}
                         {displayImages.map((img, idx) => (
                             <div key={idx} className="rounded-xl overflow-hidden border border-white/[0.1] bg-neutral-900">
-                                <img
+                                <Image
                                     src={img}
                                     alt={`${project.title} ${idx + 1}`}
+                                    width={1200}
+                                    height={800}
                                     className="w-full h-auto block"
                                 />
                             </div>

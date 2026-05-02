@@ -22,7 +22,7 @@ export default function SkillsPage() {
                                 {category.replace('_', ' / ')}
                             </h2>
                             <div className="flex flex-wrap gap-2">
-                                {items.map(skill => (
+                                {items.map((skill: string) => (
                                     <div key={skill} className="px-3 py-1.5 bg-white/[0.05] border border-white/[0.05] text-gray-300 rounded-md font-mono text-sm hover:bg-white/[0.1] transition-colors cursor-default">
                                         {skill}
                                     </div>

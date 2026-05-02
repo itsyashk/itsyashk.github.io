@@ -1,5 +1,22 @@
+export interface Profile {
+    name: string;
+    headline: string;
+    subheading: string;
+    about: {
+        short: string;
+        long: string;
+        focus: string[];
+        interests: string[];
+        values: string[];
+    };
+    socials: {
+        github: string;
+        email: string;
+        linkedin: string;
+    };
+}
 
-export const profile = {
+export const profile: Profile = {
     name: "Yash Kakade",
     headline: "Robotics + Perception Engineer",
     subheading: "camera-only motion capture, humanoid manipulation, RL + simulation",
@@ -30,7 +47,24 @@ export const profile = {
     }
 };
 
-export const projects = [
+export interface Project {
+    slug: string;
+    title: string;
+    categories: string[];
+    tags: string[];
+    stack: string[];
+    date: string;
+    summary: string;
+    description: string;
+    approach?: string;
+    metrics?: string[];
+    github?: string;
+    image?: string;
+    images?: string[];
+    video?: string;
+}
+
+export const projects: Project[] = [
     {
         slug: "camera-only-mocap",
         title: "Camera-Only Motion Capture System",
@@ -149,11 +183,20 @@ export const projects = [
     }
 ];
 
-export const experience = [
+export interface Experience {
+    company: string;
+    website?: string;
+    role: string;
+    date: string;
+    location: string;
+    description: string[];
+}
+
+export const experience: Experience[] = [
     {
         company: "Relativity Space",
         //website: "https://www.relativityspace.com/darkmatterlab",
-        role: "Perception Researcher",
+        role: "Perception Research Engineer",
         date: "June 2025 - Present",
         location: "Long Beach, CA",
         description: [
@@ -185,7 +228,7 @@ export const experience = [
     },
     {
         company: "Air Force Research Laboratory",
-        role: "Computer Vision Researcher",
+        role: "Computer Vision Research Engineer",
         date: "June 2024 - September 2024",
         location: "Dayton, OH",
         description: [
@@ -208,14 +251,21 @@ export const experience = [
     },
 ];
 
-export const skills = {
+export interface Skills {
+    robotics: string[];
+    ml_cv: string[];
+    systems: string[];
+    cad: string[];
+}
+
+export const skills: Skills = {
     robotics: ["ROS 2", "SLAM", "Planning", "Control", "Calibration"],
     ml_cv: ["PyTorch", "TensorFlow", "OpenCV"],
     systems: ["Docker", "Linux", "Jetson", "Raspberry Pi"],
     cad: ["Fusion 360", "SolidWorks", "3D Printing"]
 };
 
-export const hobbies = [
+export const hobbies: string[] = [
     "NCAA Track & Field (Sprinting, Jumps)",
     "Origami",
     "Cars & Racing",
