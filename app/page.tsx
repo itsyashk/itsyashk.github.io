@@ -66,7 +66,7 @@ export default function Home() {
                     <h2 className="text-2xl font-bold mb-8 border-b border-neutral-200 dark:border-neutral-800 pb-2">Selected Projects</h2>
                     <div className="space-y-12">
                         {[...projects]
-                            .filter(p => !['dual-robot-slam', 'learning-robust-perception', 'redundant-arm-3d', 'finbert-financial-analysis'].includes(p.slug))
+                            .filter(p => !['dual-robot-slam', 'learning-robust-perception', 'redundant-arm-3d', 'finbert-financial-analysis', 'ros2-doctor'].includes(p.slug))
                             .sort((a, b) => parseInt(b.date) - parseInt(a.date)).map((project) => (
                             <div key={project.slug} className="flex flex-col md:flex-row gap-6 group">
                                 <div className="w-full md:w-48 flex-shrink-0 aspect-video md:aspect-[4/3] rounded-lg overflow-hidden border border-neutral-200 dark:border-neutral-800 relative bg-neutral-100 dark:bg-neutral-900 self-start">

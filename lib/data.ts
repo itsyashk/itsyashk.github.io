@@ -170,6 +170,18 @@ export const projects: Project[] = [
         video: "/images/projects/rubiks-cube-3x.mp4",
     },
     {
+        slug: "ros2-doctor",
+        title: "ros2-doctor: Claude Code Skill for ROS 2 Debugging",
+        categories: ["Robotics", "Developer Tools"],
+        tags: ["ROS 2", "Claude Code", "Developer Tools", "Debugging"],
+        stack: ["Markdown", "Python", "Claude Code"],
+        date: "2026",
+        summary: "A Claude Code skill that gives Claude a structured, evidence-first workflow for diagnosing ROS 2 workspace errors across common failure categories.",
+        description: "ros2-doctor is a Claude Code skill that replaces guesswork with a deliberate inspect-first debugging protocol for ROS 2 workspaces. It instructs Claude to identify the ROS 2 distro, classify package types (ament_python, ament_cmake, interface, launch-only, robot description), and route the problem to a focused playbook before recommending the smallest safe fix with exact verification commands. The skill ships with 10 playbooks covering colcon build errors, Python and C++ package issues, launch file failures, TF/URDF/RViz problems, dependency and distro mismatches, message/service/action generation, and workspace sourcing. Distro-specific checklists cover Humble, Jazzy, Kilted, and Rolling. An optional read-only Python workspace scanner (standard-library-only, no ROS 2 install required) prints a deterministic markdown report suitable for pasting into a debug session. The skill is installable as a Claude Code plugin marketplace entry with a single command.",
+        github: "https://github.com/itsyashk/ros2-doctor",
+        metrics: ["10 Playbooks|Common ROS 2 error categories", "4 Distros|Humble, Jazzy, Kilted, Rolling"],
+    },
+    {
         slug: "finbert-financial-analysis",
         title: "FinBERT Financial Disclosure Analysis",
         categories: ["ML/AI"],
