@@ -80,7 +80,7 @@ export default function RootLayout({
                         <span>·</span>
                         <PageViewCounter />
                         <span>·</span>
-                        <span>Last updated March 2026</span>
+                        <span>Last updated June 2026</span>
                     </footer>
                 </div>
             </body>
