@@ -8,9 +8,9 @@ import { Menu, X, Mail } from 'lucide-react';
 
 const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
+    // { name: 'About', path: '/about' },
     { name: 'Projects', path: '/projects' },
-    { name: 'Experience', path: '/experience' },
+    // { name: 'Experience', path: '/experience' },
     // { name: 'Skills', path: '/skills' },
     //   { name: 'Hobbies', path: '/hobbies' },
     { name: 'Resume', path: '/resume' },
